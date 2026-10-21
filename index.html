@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <title>特殊色置換ツール</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="toolbar">
+      <button class="button button-secondary" id="open-image" type="button">画像を読み込む</button>
+      <input id="file-input" type="file" accept="image/*" hidden>
+      <label class="mode-toggle highlight-control"><input id="highlight-toggle" type="checkbox"><span>置き換える場所をハイライト</span></label>
+      <label class="mode-toggle"><input id="transparent-toggle" type="checkbox"><span>背景を透過</span></label>
+      <label class="mode-toggle"><input id="night-toggle" type="checkbox"><span>夜景モード</span></label>
+      <button class="button button-primary" id="export-image" type="button" disabled>画像を出力</button>
+    </header>
+    <section class="preview" id="drop-zone" aria-label="画像プレビュー">
+      <div class="empty-state" id="empty-state"><div class="drop-icon" aria-hidden="true">＋</div><p>画像をここにドラッグ＆ドロップ</p></div>
+      <canvas id="canvas" hidden></canvas>
+      <div class="image-info" id="image-info" hidden></div>
+    </section>
+    <section class="palette" aria-label="消去する色">
+      <div class="palette-heading"><h1>消去する色</h1><span id="active-count">0 色選択中</span></div>
+      <div class="swatches" id="swatches"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
